@@ -42,6 +42,7 @@
         .video_header {
             opacity: 30%;
         }
+
         /* Animation Classes */
         .reveal {
             opacity: 0;
@@ -103,6 +104,15 @@
             }
             .termin {
                 display: none;
+            }
+            .video_header {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
             }
         }
         .video_lkw {
