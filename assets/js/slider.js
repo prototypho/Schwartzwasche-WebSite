@@ -10,14 +10,17 @@
     if (!stage || !track || cards.length < 3) return;
 
     // ===== Ajustes del look (tocás estos valores y listo) =====
+    // Detectar si es móvil (pantalla menor a 768px)
+    const isMobile = window.innerWidth < 768;
+    
     const cfg = {
-      xStep: 590,          // separación horizontal
+      xStep: isMobile ? 280 : 590,  // separación horizontal - más juntas en móvil
       zStep: 160,          // profundidad por nivel
       rotY: 20,            // rotación por nivel (grados)
       centerScale: 1.12,   // escala del centro
       sideScaleDrop: 0.50, // cuánto achica por nivel
       fadeDrop: 1.22,      // cuánto baja opacidad por nivel
-      autoSpeed: 6.2       // segundos por card (más bajo = más rápido)
+      autoSpeed: isMobile ? 3.5 : 6.2  // segundos por card - más rápido en móvil
     };
 
     const N = cards.length;
