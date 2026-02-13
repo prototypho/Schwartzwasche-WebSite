@@ -100,10 +100,11 @@
             
             <!-- Mobile Navigation Links -->
             <nav class="flex flex-col gap-6 mb-8">
-                <a class="mobile-nav-link text-white/70 hover:text-primary text-sm uppercase tracking-widest font-semibold transition-colors py-3 border-b border-white/10" href="#Leistungen">Leistungen</a>
                 <a class="mobile-nav-link text-white/70 hover:text-primary text-sm uppercase tracking-widest font-semibold transition-colors py-3 border-b border-white/10" href="#Erfahrung">Erfahrung</a>
+                <a class="mobile-nav-link text-white/70 hover:text-primary text-sm uppercase tracking-widest font-semibold transition-colors py-3 border-b border-white/10" href="#Leistungen">Leistungen</a>
+                
                 <a class="mobile-nav-link text-white/70 hover:text-primary text-sm uppercase tracking-widest font-semibold transition-colors py-3 border-b border-white/10" href="#Galerie">Galerie</a>
-                <a class="mobile-nav-link text-white/70 hover:text-primary text-sm uppercase tracking-widest font-semibold transition-colors py-3 border-b border-white/10" href="#Kontakt">Kontakt</a>
+                <a class="mobile-nav-link text-white/70 hover:text-primary text-sm uppercase tracking-widest font-semibold transition-colors py-3 border-b border-white/10" href="#Über Uns">Über Uns</a>
             </nav>
             
             <!-- Mobile CTA Button -->
@@ -417,11 +418,7 @@
 <p class="text-gray-500 max-w-sm">
                     Das führende Boutique-Studio für Fahrzeugaufbereitung, spezialisiert auf die Konservierung und Perfektionierung von High-End-Fahrzeugen.
                 </p>
-<div class="flex items-center gap-6">
-<a class="text-gray-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-<a class="text-gray-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
-<a class="text-gray-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
-</div>
+
 </div>
     <!-- Kontakt -->
     <div>
@@ -429,7 +426,10 @@
         <ul class="space-y-4 text-gray-500 text-sm">
             <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">location_on</span> Gerolstein, Deutschland</li>
             <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">call</span> +49 176 219 87 225</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">schedule</span> Mo - Fr: 09:00 - 19:00</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">mail</span> schwartzwaesche@web.de</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">schedule</span>
+                <p>Mo - Fr: 09 Uhr - 19 Uhr <br> Samstags: 09 Uhr - 17 Uhr</p>
+            </li>
         </ul>
     </div>
 </div>
@@ -441,7 +441,7 @@
     </div>
     <div class="jr_dev w-40 flex flex-row items-center">
         <p class="text-gray-500">Designed by JR Developer</p>
-        <a href="https://www.jr-developer.de"><img src="assets/img/JR dev_small.png" alt="JR Developer"></a>
+        <a href="https://www.jr-developer.de" target="_blank" rel="noopener noreferrer"><img src="assets/img/JR dev_small.png" alt="JR Developer"></a>
     </div>
 </div>
 </div>
@@ -628,7 +628,7 @@
             </a>
             <button class="termin flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
                 <span class="material-symbols-outlined">mail</span>
-                <span class="text-sm font-semibold">Kontakt aufnehmen</span>
+                <span class="text-sm font-semibold">schwartzwaesche@web.de</span>
             </button>
         </div>
     </div>
@@ -754,6 +754,43 @@
                 }
             });
         }
+
+        // Cookie Consent Banner Functionality
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptCookiesBtn = document.getElementById('acceptCookies');
+        const declineCookiesBtn = document.getElementById('declineCookies');
+
+        // Check if user has already made a choice
+        function checkCookieConsent() {
+            if (!cookieBanner) return; // Exit if banner doesn't exist
+            
+            const cookieConsent = localStorage.getItem('cookieConsent');
+            if (!cookieConsent) {
+                // Show banner if no choice has been made
+                setTimeout(() => {
+                    cookieBanner.classList.remove('translate-y-full');
+                }, 2000); // Show banner after 2 seconds
+            }
+        }
+
+        // Accept cookies
+        if(acceptCookiesBtn && cookieBanner) {
+            acceptCookiesBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieBanner.classList.add('translate-y-full');
+            });
+        }
+
+        // Decline cookies
+        if(declineCookiesBtn && cookieBanner) {
+            declineCookiesBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                cookieBanner.classList.add('translate-y-full');
+            });
+        }
+
+        // Run check on page load
+        checkCookieConsent();
     });
 
     // Mobile Menu Functionality
@@ -845,5 +882,82 @@
             }
         });
     }
+
+    // Cookie Consent Banner Functionality
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptCookiesBtn = document.getElementById('acceptCookies');
+    const declineCookiesBtn = document.getElementById('declineCookies');
+
+    // Check if user has already made a choice
+    function checkCookieConsent() {
+        if (!cookieBanner) return; // Exit if banner doesn't exist
+        
+        const cookieConsent = localStorage.getItem('cookieConsent');
+        if (!cookieConsent) {
+            // Show banner if no choice has been made
+            setTimeout(() => {
+                cookieBanner.classList.remove('translate-y-full');
+            }, 1000); // Show banner after 1 second
+        }
+    }
+
+    // Accept cookies
+    if(acceptCookiesBtn && cookieBanner) {
+        acceptCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.classList.add('translate-y-full');
+        });
+    }
+
+    // Decline cookies
+    if(declineCookiesBtn && cookieBanner) {
+        declineCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieBanner.classList.add('translate-y-full');
+        });
+    }
+
+    // Run check on page load
+    checkCookieConsent();
 </script>
+
+<!-- Cookie Consent Banner -->
+<div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-[120] transform translate-y-full transition-transform duration-500 ease-in-out">
+    <div class="bg-background-dark/95 backdrop-blur-md border-t border-primary/20 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Cookie Icon & Text -->
+                <div class="flex items-start gap-4 flex-1">
+                    <div class="text-primary mt-1">
+                        <span class="material-symbols-outlined text-3xl">cookie</span>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold text-lg mb-2">Wir verwenden Cookies</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern und um den Traffic zu analysieren. 
+                            Durch Klicken auf "Akzeptieren" stimmen Sie der Verwendung von Cookies zu. 
+                            <a href="#" class="text-primary hover:underline">Mehr erfahren</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                    <button 
+                        id="declineCookies" 
+                        class="border border-white/20 text-white px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95 whitespace-nowrap"
+                    >
+                        Ablehnen
+                    </button>
+                    <button 
+                        id="acceptCookies" 
+                        class="bg-primary text-background-dark px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all active:scale-95 whitespace-nowrap"
+                    >
+                        Akzeptieren
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body></html>

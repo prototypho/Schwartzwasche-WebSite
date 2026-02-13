@@ -8,6 +8,7 @@
   height: 650px;
 }
 
+
 .coverflow__stage{
   position: relative;
   height: 640px;               /* parecido al demo */
@@ -86,7 +87,12 @@
 @media (max-width: 980px){
   .coverflow__stage{ height: 380px; }
   .cfCard{ width: 250px; height: 320px; }
+  .coverflow{
+    height: 480px;
+  }
 }
+
+
 .coverflow__stage { transform: translateZ(0); }
 .cfCard { backface-visibility: hidden; }
 
