@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Indica la ruta de tu mapa del sitio
+Sitemap: https://schwartzwäsche.de/sitemap.xml
