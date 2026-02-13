@@ -450,20 +450,19 @@
 <!-- Contact Modal -->
 <div id="contactModal" class="modal-backdrop fixed inset-0 z-[100] hidden items-center justify-center p-4">
     <div class="modal-content bg-background-dark border border-primary/20 rounded-xl max-w-2xl w-full p-8 md:p-12 relative">
-        <!-- Close Button -->
         <button id="closeContactModal" class="modal-close-btn absolute top-6 right-6 text-white/50 hover:text-primary text-3xl">
             <span class="material-symbols-outlined">close</span>
         </button>
         
-        <!-- Header -->
         <div class="mb-8">
             <h2 class="text-white font-serif text-3xl md:text-4xl mb-3">Kontaktieren Sie Uns</h2>
             <div class="w-16 h-px bg-primary mb-4"></div>
             <p class="text-gray-400 text-sm">Füllen Sie das Formular aus und wir werden uns so schnell wie möglich bei Ihnen melden.</p>
         </div>
 
-        <!-- Contact Form -->
-        <form id="contactForm" class="space-y-6">
+        <form id="contactForm" name="contacto-detailing" method="POST" data-netlify="true" class="space-y-6">
+            <input type="hidden" name="form-name" value="contacto-detailing" />
+
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
                     <label for="contactName" class="block text-primary text-xs uppercase tracking-widest mb-2 font-semibold">Name *</label>
@@ -472,7 +471,7 @@
                         id="contactName" 
                         name="name" 
                         required 
-                        class="form-input w-full"
+                        class="form-input w-full bg-transparent border-primary/20 text-white rounded-lg p-3 focus:border-primary outline-none transition-all"
                         placeholder="Ihr vollständiger Name"
                     >
                 </div>
@@ -483,7 +482,7 @@
                         id="contactEmail" 
                         name="email" 
                         required 
-                        class="form-input w-full"
+                        class="form-input w-full bg-transparent border-primary/20 text-white rounded-lg p-3 focus:border-primary outline-none transition-all"
                         placeholder="ihre@email.de"
                     >
                 </div>
@@ -496,7 +495,7 @@
                     id="contactPhone" 
                     name="phone" 
                     required 
-                    class="form-input w-full"
+                    class="form-input w-full bg-transparent border-primary/20 text-white rounded-lg p-3 focus:border-primary outline-none transition-all"
                     placeholder="+49 123 456 7890"
                 >
             </div>
@@ -505,24 +504,29 @@
                 <label for="contactComment" class="block text-primary text-xs uppercase tracking-widest mb-2 font-semibold">Kommentar *</label>
                 <textarea 
                     id="contactComment" 
-                    name="comment" 
+                    name="message" 
                     required 
-                    class="form-input form-textarea w-full"
+                    rows="4"
+                    class="form-input form-textarea w-full bg-transparent border-primary/20 text-white rounded-lg p-3 focus:border-primary outline-none transition-all"
                     placeholder="Erzählen Sie uns von Ihrem Fahrzeug und Ihren Wünschen..."
                 ></textarea>
+            </div>
+
+            <div class="hidden">
+                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 pt-4">
                 <button 
                     type="submit" 
-                    class="bg-primary text-background-dark px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-widest hover:brightness-110 transition-all flex-1"
+                    class="bg-primary text-background-dark px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-widest hover:brightness-110 transition-all flex-1 active:scale-95"
                 >
                     Nachricht Senden
                 </button>
                 <button 
                     type="button" 
                     id="cancelContact"
-                    class="border border-white/20 text-white px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all"
+                    class="border border-white/20 text-white px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95"
                     onclick="document.getElementById('closeContactModal').click()"
                 >
                     Abbrechen
