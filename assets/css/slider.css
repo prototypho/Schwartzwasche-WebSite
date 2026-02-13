@@ -35,7 +35,7 @@
   width: 580px;
   height: 440px;
   transform-style: preserve-3d;
-
+  cursor: default !important;
   border-radius: 22px;
   padding: 36px;
   border: 1px solid rgba(255,255,255,.14);
@@ -106,4 +106,8 @@
   padding: 6px 14px;
   font-size: 1.2rem;
   margin-top: 7rem;
+}
+
+#Galerie {
+  scroll-margin-top: 120px; /* ajusta al alto de tu navbar */
 }

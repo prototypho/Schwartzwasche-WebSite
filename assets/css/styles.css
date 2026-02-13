@@ -239,4 +239,7 @@
                 margin: 0 0.5rem;
             }
         }
-     
+
+        section {
+            scroll-margin-top: 120px;
+        }

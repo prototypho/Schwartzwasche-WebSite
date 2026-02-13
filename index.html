@@ -46,11 +46,11 @@
 <span class="text-white font-serif text-xl tracking-widest uppercase"></span>
 </div>
 <nav class="hidden ms-48 md:flex items-center gap-10">
+<a class="nav-link text-white/70 hover:text-primary text-xs uppercase tracking-widest font-semibold transition-colors" href="#Erfahrung">Erfahrung</a>
+<a class="nav-link text-white/70 hover:text-primary text-xs uppercase tracking-widest font-semibold transition-colors" href="#Leistungen">Leistungen</a>
 
-<a class="nav-link text-white/70 hover:text-primary text-xs uppercase tracking-widest font-semibold transition-colors" href="#">Leistungen</a>
-<a class="nav-link text-white/70 hover:text-primary text-xs uppercase tracking-widest font-semibold transition-colors" href="#">Erfahrung</a>
-<a class="nav-link text-white/70 hover:text-primary text-xs uppercase tracking-widest font-semibold transition-colors" href="#">Galerie</a>
-<a class="nav-link text-white/70 hover:text-primary text-xs uppercase tracking-widest font-semibold transition-colors" href="#">Kontakt</a>
+<a class="nav-link text-white/70 hover:text-primary text-xs uppercase tracking-widest font-semibold transition-colors" href="#Galerie">Galerie</a>
+<a class="nav-link text-white/70 hover:text-primary text-xs uppercase tracking-widest font-semibold transition-colors" href="#Kontakt">Über Uns</a>
 </nav>
 <div class="flex items-center gap-6">
 <!-- Hamburger Button (Mobile Only) -->
@@ -97,27 +97,27 @@
     <source src="assets/img/header.mp4" type="video/mp4">
 </video>
 <div class="relative z-10 text-center px-4 max-w-5xl">
-<h1 class="text-white font-serif text-5xl md:text-8xl mb-6 tracking-tight leading-tight text-shadow-lg reveal">
-            Die Kunst der <span class="italic text-primary">Automobilen</span> Perfektion
-        </h1>
-<p class="text-primary/80 font-display text-sm md:text-lg uppercase tracking-[0.3em] mb-12">
-            Exklusives Detailing und Keramikversiegelung für anspruchsvolle Fahrzeuge
-        </p>
-<div class="flex flex-col md:flex-row items-center justify-center gap-6 reveal reveal-delay-200">
-<button class="bg-primary text-background-dark px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:brightness-110 transition-all min-w-[240px]">
-                Leistungen Entdecken
+    <h1 class="text-white font-serif text-5xl md:text-8xl mb-6 tracking-tight leading-tight text-shadow-lg reveal">
+        Die Kunst der <span class="italic text-primary">Automobilen</span> Perfektion
+    </h1>
+    <p class="text-primary/80 font-display text-sm md:text-lg uppercase tracking-[0.3em] mb-12">
+        Exklusives Detailing und Keramikversiegelung für anspruchsvolle Fahrzeuge
+    </p>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6 reveal reveal-delay-200">
+            <button id="openHoursBtn" class="bg-primary text-background-dark px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:brightness-110 transition-all min-w-[240px]">
+                Öffnungszeiten 
             </button>
-<a href="#galerie" class="border border-white/20 text-white backdrop-blur-sm px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all min-w-[240px]">
+            <button href="#galerie" class="border border-white/20 text-white backdrop-blur-sm px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all min-w-[240px]">
                 Galerie
-            </a>
-</div>
+            </button>
+        </div>
 </div>
 <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30">
 <span class="text-[10px] uppercase tracking-[0.4em]">Scrollen</span>
 <span class="material-symbols-outlined animate-bounce">expand_more</span>
 </div>
 </section>
-<section class="py-24 bg-background-dark relative">
+<section id="Erfahrung" class="py-24 bg-background-dark relative">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="grid lg:grid-cols-3 gap-16 items-center">
             <div class="space-y-8 reveal">
@@ -154,9 +154,9 @@
 </section>
 
 <!-- Galerie -->
-<section id="galerie">
+<section id="Galerie">
     <!-- Slider -->
-                <div class=" mt-40 px-6 lg:px-12 text-center">
+                <div class="mx-auto px-6 lg:px-12 text-center">
                     <h2 class="text-white font-serif text-4xl md:text-6xl mb-4">Galerie</h2>
                     <div class="w-24 h-px bg-primary mx-auto"></div>
                 </div>
@@ -220,7 +220,7 @@
 </section>
 
 <!-- Exklusive Behandlungen --> 
-<section class="bg-background-dark mt-40 pt-24">
+<section id="Leistungen" class="bg-background-dark mt-40 pt-24">
     <div class=" mx-auto px-6 lg:px-12 text-center">
         <h2 class="text-white font-serif text-4xl md:text-6xl mb-4">Exklusive Behandlungen</h2>
         <div class="w-24 h-px bg-primary mx-auto mb-12"></div>
@@ -347,7 +347,7 @@
 </section>
 
 <!-- Über Uns -->
-<section class="bg-zinc-900 mt-40 overflow-hidden">
+<section id="Kontakt" class="bg-zinc-900 mt-40 overflow-hidden">
     <div class="flex flex-col lg:flex-row min-h-[600px]">
         <div class="w-full lg:w-1/3 bg-cover bg-center min-h-[400px]" style='background-image: url("assets/img/Schwartz.png");'></div>
             <div class="w-full lg:w-2/3 flex items-center justify-center p-12 lg:p-24 bg-background-dark">
@@ -546,6 +546,62 @@
 
 
 
+<!-- Opening Hours Modal -->
+<div id="hoursModal" class="modal-backdrop fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="modal-content bg-background-dark border border-primary/20 rounded-xl max-w-2xl w-full p-8 md:p-12 relative">
+        <!-- Close Button -->
+        <button id="closeHoursModal" class="modal-close-btn absolute top-6 right-6 text-white/50 hover:text-primary text-3xl">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        
+        <!-- Header -->
+        <div class="mb-8 text-center">
+            <h2 class="text-white font-serif text-3xl md:text-4xl mb-3">Öffnungszeiten</h2>
+            <div class="w-16 h-px bg-primary mx-auto mb-4"></div>
+            <p class="text-gray-400 text-sm">Besuchen Sie uns während unserer Geschäftszeiten</p>
+        </div>
+
+        <!-- Opening Hours -->
+        <div class="space-y-4">
+            <div class="flex justify-between items-center py-4 border-b border-white/10">
+                <span class="text-primary text-lg font-semibold uppercase tracking-widest">Montag - Freitag</span>
+                <span class="text-white text-lg font-bold">09:00 - 19:00</span>
+            </div>
+            <div class="flex justify-between items-center py-4 border-b border-white/10">
+                <span class="text-primary text-lg font-semibold uppercase tracking-widest">Samstag</span>
+                <span class="text-white text-lg font-bold">09:00 - 17:00</span>
+            </div>
+            <div class="flex justify-between items-center py-4 border-b border-white/10">
+                <span class="text-primary text-lg font-semibold uppercase tracking-widest">Sonntag</span>
+                <span class="text-white/50 text-lg font-bold">Geschlossen</span>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-8 p-6 bg-primary/10 rounded-lg border border-primary/20">
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-2xl">info</span>
+                <div>
+                    <h3 class="text-white font-bold mb-2">Terminvereinbarung empfohlen</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Für exklusive Behandlungen empfehlen wir eine vorherige Terminvereinbarung. Kontaktieren Sie uns telefonisch oder per E-Mail.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+4917621987225" class="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
+                <span class="material-symbols-outlined">call</span>
+                <span class="text-sm font-semibold">+49 176 219 87 225</span>
+            </a>
+            <button class="termin flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
+                <span class="material-symbols-outlined">mail</span>
+                <span class="text-sm font-semibold">Kontakt aufnehmen</span>
+            </button>
+        </div>
+    </div>
+</div>
+
 <!-- Price Modal -->
 <div id="priceModal" class="modal-backdrop fixed inset-0 z-[110] hidden items-center justify-center p-4">
     <div class="relative w-full h-full flex items-center justify-center">
@@ -723,6 +779,37 @@
             if(contactModal) {
                 contactModal.classList.remove('hidden');
                 contactModal.classList.add('flex');
+            }
+        });
+    }
+
+    // Opening Hours Modal Functionality
+    const hoursModal = document.getElementById('hoursModal');
+    const openHoursBtn = document.getElementById('openHoursBtn');
+    const closeHoursModal = document.getElementById('closeHoursModal');
+
+    // Open Hours Modal
+    if(openHoursBtn) {
+        openHoursBtn.addEventListener('click', () => {
+            hoursModal.classList.remove('hidden');
+            hoursModal.classList.add('flex');
+        });
+    }
+
+    // Close Hours Modal
+    if(closeHoursModal) {
+        closeHoursModal.addEventListener('click', () => {
+            hoursModal.classList.add('hidden');
+            hoursModal.classList.remove('flex');
+        });
+    }
+
+    // Close modal when clicking outside
+    if(hoursModal) {
+        hoursModal.addEventListener('click', (e) => {
+            if(e.target === hoursModal) {
+                hoursModal.classList.add('hidden');
+                hoursModal.classList.remove('flex');
             }
         });
     }
