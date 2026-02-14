@@ -23,28 +23,8 @@ contactModal?.addEventListener("click", (e) => {
     document.body.style.overflow = "auto";
   }
 });
-// Handle contact form submission
-contactForm?.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const formData = {
-    name: document.getElementById("contactName").value,
-    email: document.getElementById("contactEmail").value,
-    phone: document.getElementById("contactPhone").value,
-    comment: document.getElementById("contactComment").value,
-  };
-
-  console.log("Form submitted:", formData);
-
-  // Show success message
-  alert("¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.");
-
-  // Reset form and close modal
-  contactForm.reset();
-  contactModal.classList.add("hidden");
-  contactModal.classList.remove("flex");
-  document.body.style.overflow = "auto";
-});
+// Netlify Forms will handle the submission and redirect to success.html
+// No need to prevent default or handle submission with JavaScript
 // Gallery Modal Logic
 const galleryModal = document.getElementById("galleryModal");
 const closeGalleryModal = document.getElementById("closeGalleryModal");
@@ -81,7 +61,6 @@ const galleryImages = [
   "assets/img/galeria/galeri18.jpg",
   "assets/img/galeria/galeri19.jpg",
   "assets/img/galeria/galeri20.jpg",
-
 ];
 // Populate gallery grid with thumbnails
 function populateGallery() {
