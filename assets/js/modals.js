@@ -40,7 +40,7 @@ const galleryImages = [
   "assets/img/galeria/DETO4890.JPG",
   "assets/img/galeria/TUDF8787.JPG",
   "assets/img/galeria/UQBO3254.JPG",
-  "assets/img/galeria/detail.jpg",
+  "assets/img/galeria/detail.png",
   "assets/img/galeria/galeri1.jpg",
   "assets/img/galeria/galeri2.jpg",
   "assets/img/galeria/galeri3.jpg",
