@@ -36,7 +36,7 @@ const closeFullscreenModal = document.getElementById("closeFullscreenModal");
 const fullscreenImage = document.getElementById("fullscreenImage");
 // Gallery images - These will only appear in the modal
 const galleryImages = [
-  "assets/img/galeria/behand.jpg",
+  "assets/img/galeria/behand.png",
   "assets/img/galeria/DETO4890.JPG",
   "assets/img/galeria/TUDF8787.JPG",
   "assets/img/galeria/UQBO3254.JPG",
